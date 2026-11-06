@@ -2,7 +2,7 @@
 
 Read `PROJECT_STATUS.md`, `CHATGPT-INTEGRATION.md` and `UPSTREAM.json` before making changes. Keep GitHub documentation concise and in English.
 
-For new agent-authored commits, use author and committer name `Spezi (Codex)` with `spezi@voiceink-chatgpt.invalid` (an intentionally unlinked reserved-domain address). The user chose to keep all existing commits unchanged. Do not rewrite history to rename authors or alter upstream attribution.
+For new agent-authored commits, use author and committer name `Spezi (Codex)` with `spezi@voiceink-chatgpt.invalid` (an intentionally unlinked reserved-domain address). Preserve historical attribution; do not rewrite history merely to rename authors.
 
 - Preserve the separate VoiceInk ChatGPT app identity, Keychain namespace and data directories. Never migrate or overwrite the original VoiceInk app's data implicitly.
 - ChatGPT text enhancement and audio transcription are separate experimental integrations. Do not promise included usage, billing terms, fixed audio models or permanent availability.
@@ -10,6 +10,7 @@ For new agent-authored commits, use author and committer name `Spezi (Codex)` wi
 - Never commit credentials, personal dictionaries, business prompts, recordings or private repository details to this public fork.
 - Merge upstream deliberately; inspect conflicts and behavior, then update `UPSTREAM.json`. Do not assume GitHub's Sync fork button validates our changes.
 - Validate relevant protocol tests, mode migration/backup round trips, native client typechecking and the macOS app build after code changes. Release packaging must verify the extracted ZIP and mounted DMG, app identity, version and signatures.
+- Documentation-only changes need focused diff/link checks, not a full app build. The macOS workflow ignores the known documentation paths. Use the standard Apple Silicon macOS 26 runner and a compatible Swift 6.3+ Xcode toolchain; do not add Intel packages without a new request.
 - Continue the existing ChatGPT build sequence. Keep upstream marketing version separate from our build number. Never overwrite a published release with different binaries.
 - Preserve legacy release links. Publish complete DMG, ZIP, checksums and provenance together through the release workflow.
 - Keep download assets and version-specific download links in GitHub Releases. The README should describe features and installation without a manually maintained download/version block.

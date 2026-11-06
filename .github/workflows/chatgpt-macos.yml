@@ -3,6 +3,14 @@ name: VoiceInk ChatGPT macOS
 on:
   push:
     branches: [main, feature/chatgpt-native]
+    paths-ignore:
+      - README.md
+      - AGENTS.md
+      - PROJECT_STATUS.md
+      - CHANGELOG.md
+      - CHATGPT-BUILD.md
+      - CHATGPT-INTEGRATION.md
+      - .github/chatgpt-release-notes.md
   workflow_dispatch:
     inputs:
       publish_release:

@@ -1,6 +1,6 @@
 # Changelog
 
-## VoiceInk 2.25 — ChatGPT Build 228
+## VoiceInk 2.25 — ChatGPT Build 228 · 2026-11-06
 
 - 🔄 Moved development to a real upstream fork and merged the latest streaming, recorder-placement and dependency updates.
 - 📦 Added versioned DMG/ZIP packages, checksums and source provenance.
