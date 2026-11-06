@@ -15,7 +15,7 @@ User-tested with **ChatGPT Plus and Pro ($100/month)**. Model access and usage l
 
 Open **AI Models → Cloud → ChatGPT**, click **Sign in with ChatGPT**, and complete sign-in in your browser. This connects your account for both transcription and optional text enhancement.
 
-*Orange arrows highlight the relevant controls.*
+*Each guide pairs a full app view with an enlarged detail. Orange highlights show where to look.*
 
 ![ChatGPT provider settings with the Sign in with ChatGPT button](docs/images/chatgpt-connect.png)
 

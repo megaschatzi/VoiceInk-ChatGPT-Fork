@@ -1,5 +1,9 @@
 # Changelog
 
+## Documentation · 2026-11-06
+
+- 🖼️ Added three setup guides pairing real app overviews with enlarged sign-in, transcription and model/reasoning controls.
+
 ## VoiceInk 2.25 — ChatGPT Build 228 · 2026-11-06
 
 - 🔄 Moved development to a real upstream fork and merged the latest streaming, recorder-placement and dependency updates.
