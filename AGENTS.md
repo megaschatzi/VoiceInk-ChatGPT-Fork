@@ -16,7 +16,7 @@ For new agent-authored commits, use author and committer name `Spezi (Codex)` wi
 - Mark completed app releases as regular **Latest** releases so they appear in the repository sidebar. Keep experimental integration and signing limitations documented; do not replace release assets when changing visibility/labels.
 - Keep download assets and version-specific download links in GitHub Releases. The README should describe features and installation without a manually maintained download/version block.
 - Keep the three setup screenshots beside their corresponding features: ChatGPT connection/sign-in button, transcription-model selection, and text-model/reasoning selection. Use real app captures; explicitly label offline demo settings and never include personal data or real credentials. Refresh screenshots when those controls change.
-- Present setup guides as a prominent full app overview beside an enlarged detail, with a short English instruction and subtle orange highlights linking the two. Compose deterministically from genuine captures without generative image editing; preserve UI text, keep controls unobscured, and retain enough surrounding UI for orientation.
+- Use full app screenshots with simple orange frames around the relevant controls. No zoomed details, side-by-side compositions or arrows. Add frames deterministically to genuine captures without generative image editing; preserve original dimensions, UI text and all pixels outside the frame outlines.
 
 ## Maintain the handoff
 
