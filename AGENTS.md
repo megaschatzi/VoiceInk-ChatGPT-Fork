@@ -15,6 +15,7 @@ For new agent-authored commits, use author and committer name `Spezi (Codex)` wi
 - Preserve legacy release links. Publish complete DMG, ZIP, checksums and provenance together through the release workflow.
 - Mark completed app releases as regular **Latest** releases so they appear in the repository sidebar. Keep experimental integration and signing limitations documented; do not replace release assets when changing visibility/labels.
 - Keep download assets and version-specific download links in GitHub Releases. The README should describe features and installation without a manually maintained download/version block.
+- Keep the three setup screenshots beside their corresponding features: ChatGPT connection/sign-in button, transcription-model selection, and text-model/reasoning selection. Use real app captures; explicitly label offline demo settings and never include personal data or real credentials. Refresh screenshots when those controls change.
 
 ## Maintain the handoff
 

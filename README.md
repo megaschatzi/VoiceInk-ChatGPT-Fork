@@ -11,9 +11,27 @@ Native ChatGPT sign-in for **audio transcription and text enhancement**. No API 
 
 User-tested with **ChatGPT Plus and Pro ($100/month)**. Model access and usage limits depend on the account. This uses experimental internal endpoints; included audio minutes, billing treatment and continued availability are not guaranteed. Audio and enabled enhancement context are sent to OpenAI.
 
-### 🧠 Model and reasoning selection
+### 🔗 Connect ChatGPT
 
-In a mode, enable **AI Enhancement → ChatGPT**, then choose a model and reasoning level. Each mode keeps its own selection. Choose a preset or enter a custom model ID; available reasoning levels depend on the model.
+Open **AI Models → Cloud → ChatGPT**, click **Sign in with ChatGPT**, and complete sign-in in your browser. This connects your account for both transcription and optional text enhancement.
+
+![ChatGPT provider settings with the Sign in with ChatGPT button](docs/images/chatgpt-connect.png)
+
+### 🎙️ Choose ChatGPT for transcription
+
+Open **Modes** and add or edit a mode. Under **Transcription → Model**, choose **ChatGPT Dictation**, select your language, then **Save Changes**. This selects audio-to-text transcription independently of the text-enhancement model.
+
+![Mode settings with ChatGPT Dictation selected for transcription](docs/images/chatgpt-transcription.png)
+
+*Demo configuration; no real ChatGPT account is connected in this capture.*
+
+### 🧠 Choose a text model and reasoning level
+
+In the same mode, enable **AI Enhancement**, choose **ChatGPT** as the provider, then select an **AI Model** and **Reasoning level**. Each mode keeps its own selection. Presets and custom model IDs are supported; available reasoning levels depend on the model. Choose your editing prompt or add one with **+**, then click **Save Changes**.
+
+![ChatGPT text-enhancement settings with model and reasoning controls](docs/images/chatgpt-enhancement.png)
+
+*Demo configuration; no real ChatGPT account is connected in this capture.*
 
 ## 🚀 Install or update
 
