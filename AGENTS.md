@@ -13,6 +13,7 @@ For new agent-authored commits, use author and committer name `Spezi (Codex)` wi
 - Documentation-only changes need focused diff/link checks, not a full app build. The macOS workflow ignores the known documentation paths. Use the standard Apple Silicon macOS 26 runner and a compatible Swift 6.3+ Xcode toolchain; do not add Intel packages without a new request.
 - Continue the existing ChatGPT build sequence. Keep upstream marketing version separate from our build number. Never overwrite a published release with different binaries.
 - Preserve legacy release links. Publish complete DMG, ZIP, checksums and provenance together through the release workflow.
+- Mark completed app releases as regular **Latest** releases so they appear in the repository sidebar. Keep experimental integration and signing limitations documented; do not replace release assets when changing visibility/labels.
 - Keep download assets and version-specific download links in GitHub Releases. The README should describe features and installation without a manually maintained download/version block.
 
 ## Maintain the handoff

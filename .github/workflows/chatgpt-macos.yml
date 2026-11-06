@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
     inputs:
       publish_release:
-        description: Publish the verified app DMG and ZIP as a public prerelease
+        description: Publish the verified app DMG and ZIP as the latest public release
         type: boolean
         default: false
 

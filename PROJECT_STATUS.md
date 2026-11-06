@@ -18,6 +18,7 @@ Updated: 2026-11-06 UTC. Read with `AGENTS.md`; use Actions for live build statu
 - Independent packaging and upstream merge reviews were completed. No live ChatGPT account was used in CI; user testing on a Mac remains the runtime confirmation.
 - Release packaging verifies the extracted ZIP and mounted DMG, app identity/version and signatures. Publication uploads complete DMG, ZIP, checksums and source provenance before making a release visible.
 - Downloads and version details belong in GitHub Releases. README installation guidance stays general.
+- Build 228 is a regular release marked **Latest**; future releases are marked latest after all assets upload. The experimental nature of the ChatGPT integration remains documented.
 - New agent commits use **Spezi (Codex)**. Existing commits and upstream attribution remain unchanged. Keep commits focused on lasting changes; temporary build progress belongs in Actions or local notes.
 - At the user's request, redundant migration progress commits were consolidated after a verified recoverable backup. The final file tree, upstream merge and earlier feature history were preserved. Do not rewrite the published release commit/tag.
 

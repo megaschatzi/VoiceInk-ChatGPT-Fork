@@ -28,9 +28,9 @@ PY
   fi
   gh release upload "$tag" "${files[@]}" --clobber
 else
-  gh release create "$tag" "${files[@]}" --target "$commit" --draft --prerelease \
+  gh release create "$tag" "${files[@]}" --target "$commit" --draft \
     --title "VoiceInk $version — ChatGPT Build $build" --notes-file .github/chatgpt-release-notes.md
 fi
 # Publish only after every package and checksum has uploaded successfully.
-gh release edit "$tag" --draft=false --prerelease \
+gh release edit "$tag" --draft=false --prerelease=false --latest \
   --title "VoiceInk $version — ChatGPT Build $build" --notes-file .github/chatgpt-release-notes.md
