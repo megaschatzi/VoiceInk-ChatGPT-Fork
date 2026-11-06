@@ -108,3 +108,7 @@ Temporary Items
 .build/
 .swiftpm/
 VoiceInk-ChatGPT-macOS.zip*
+
+# Versioned ChatGPT release packages
+dist/
+__pycache__/

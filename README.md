@@ -1,110 +1,30 @@
-> **Use your existing ChatGPT subscription with VoiceInk:** This experimental integration uses your ChatGPT account for **audio-to-text transcription and optional LLM text enhancement**. User-tested with **ChatGPT Plus and Pro ($100/month)**. Sign in with ChatGPT; **no OpenAI API key, separate API setup, or installed Codex CLI is required**. Access and limits depend on your account; unlimited or included audio minutes are not guaranteed. Audio and enhancement inputs are sent to OpenAI. See the [English overview](CHATGPT-INTEGRATION.md) and [installation instructions](CHATGPT-BUILD.md). Based on [Beingpax/VoiceInk](https://github.com/Beingpax/VoiceInk); this independent copy retains upstream history but is not linked to GitHub’s fork network. The documentation below describes the original upstream project. **[Download the build 227 ZIP](https://github.com/megaschatzi/VoiceInk-ChatGPT/releases/download/v2.25-chatgpt-build227/VoiceInk-ChatGPT-macOS.zip)** (no GitHub sign-in required). Enhancement supports per-mode model and reasoning selection, custom IDs, and model/language guidance.
+# VoiceInk ChatGPT
 
-<div align="center">
-  <img src="VoiceInk/Assets.xcassets/AppIcon.appiconset/256-mac.png" width="180" height="180" />
-  <h1>VoiceInk</h1>
-  <p>Voice to text app for macOS to transcribe what you say to text almost instantly</p>
+Native ChatGPT sign-in for **audio transcription and text enhancement**. No API key or installed CLI required. Based on [Beingpax/VoiceInk](https://github.com/Beingpax/VoiceInk), with separate app identity and storage so both apps can stay installed.
 
-  [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-  ![Platform](https://img.shields.io/badge/platform-macOS%2015.0%2B-brightgreen)
-  [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Beingpax/VoiceInk)](https://github.com/Beingpax/VoiceInk/releases)
-  ![GitHub all releases](https://img.shields.io/github/downloads/Beingpax/VoiceInk/total)
-  ![GitHub stars](https://img.shields.io/github/stars/Beingpax/VoiceInk?style=social)
-  <p>
-    <a href="https://tryvoiceink.com">Website</a> •
-    <a href="https://www.youtube.com/@tryvoiceink">YouTube</a>
-  </p>
+## ✨ Features
 
-  <a href="https://tryvoiceink.com">
-    <img src="https://img.shields.io/badge/Download%20Now-Latest%20Version-blue?style=for-the-badge&logo=apple" alt="Download VoiceInk" width="250"/>
-  </a>
-</div>
+- Sign in with ChatGPT and transcribe recorded audio directly through ChatGPT.
+- Optional text enhancement with per-mode model and reasoning selection.
+- Current and earlier text-model presets, custom IDs, and model/language guidance.
+- Separate settings, Keychain credentials, history and recordings from the original VoiceInk.
 
----
+User-tested with **ChatGPT Plus and Pro ($100/month)**. Model access and usage limits depend on the account. This uses experimental internal endpoints; included audio minutes, billing treatment and continued availability are not guaranteed. Audio and enabled enhancement context are sent to OpenAI.
 
-VoiceInk is a native macOS application that transcribes what you say to text almost instantly. You can find all the information and download the app from [here](https://tryvoiceink.com). 
+## 🚀 Install or update
 
-![VoiceInk Mac App](https://github.com/user-attachments/assets/12367379-83e7-48a6-b52c-4488a6a04bba)
+Find downloads and version details in GitHub's **Releases** section. Requires macOS 15+. Ad-hoc signed, **not Apple-notarized**.
 
-After dedicating the past 5 months to developing this app, I've decided to open source it for the greater good. 
+1. Quit **VoiceInk ChatGPT**. Open the DMG and drag the app to Applications, or unzip the ZIP and move the app there.
+2. Replace the existing **VoiceInk ChatGPT.app** to keep its settings and data. The original **VoiceInk.app** remains separate.
+3. If macOS blocks the app, use **System Settings → Privacy & Security** to approve it. Do not disable Gatekeeper.
+4. Open **AI Models → Cloud → ChatGPT**, sign in and test the connection.
+5. In a mode, choose **ChatGPT Dictation** and optionally enable **AI Enhancement → ChatGPT**. Select a text model and reasoning level.
 
-My goal is to make it **the most efficient and privacy-focused voice-to-text solution for macOS** that is a joy to use. While the source code is now open for experienced developers to build and contribute, purchasing a license helps support continued development and gives you access to automatic updates, priority support, and upcoming features.
+To copy settings from the original app: export under **Settings → Backup**, then import in VoiceInk ChatGPT. History and account connections are not migrated. Run one dictation app at a time to avoid shortcut conflicts.
 
-## Features
+## 🛠️ Development
 
-- 🎙️ **Accurate Transcription**: Local AI models that transcribe your voice to text with 99% accuracy, almost instantly
-- 🔒 **Privacy First**: 100% offline processing ensures your data never leaves your device
-- ⚡ **Modes**: Intelligent app detection automatically applies your perfect pre-configured settings based on the app/ URL you're on
-- 🧠 **Context Aware**: Smart AI that understands your screen content and adapts to the context
-- 🎯 **Global Shortcuts**: Configurable keyboard or mouse shortcuts for quick recording and push-to-talk functionality
-- 📝 **Personal Dictionary**: Train the AI to understand your unique terminology with custom words, industry terms, and smart text replacements
-- 🔄 **Smart Modes**: Instantly switch between AI-powered modes optimized for different writing styles and contexts
-- 🤖 **AI Assistant**: Built-in voice assistant mode for a quick chatGPT like conversational assistant
+[Build instructions](CHATGPT-BUILD.md) · [Integration details](CHATGPT-INTEGRATION.md) · [Project status](PROJECT_STATUS.md) · [Changelog](CHANGELOG.md) · [Upstream provenance](UPSTREAM.json)
 
-## Get Started
-
-### Download
-Get the latest version with a free trial from [tryvoiceink.com](https://tryvoiceink.com). Your purchase helps me work on VoiceInk full-time and continuously improve it with new features and updates.
-
-#### Homebrew
-Alternatively, you can install VoiceInk via `brew`:
-
-```shell
-brew install --cask voiceink
-```
-
-### Build from Source
-As an open-source project, you can build VoiceInk yourself by following the instructions in [BUILDING.md](BUILDING.md). However, the compiled version includes additional benefits like automatic updates, priority support via Discord and email, and helps fund ongoing development.
-
-## Requirements
-
-- macOS 15.0 or later
-
-## Documentation
-
-- [Building from Source](BUILDING.md) - Detailed instructions for building the project
-- [Contributing Guidelines](CONTRIBUTING.md) - How to contribute to VoiceInk
-- [Code of Conduct](CODE_OF_CONDUCT.md) - Our community standards
-
-## Contributing
-
-This project is **not accepting pull requests** at this time. You're welcome to fork and modify VoiceInk for your own use.
-
-You can still contribute by:
-- Reporting bugs via [issues](https://github.com/Beingpax/VoiceInk/issues)
-- Suggesting features or enhancements
-- Improving documentation via issues
-
-For more details, see our [Contributing Guidelines](CONTRIBUTING.md). For build instructions, see our [Building Guide](BUILDING.md).
-
-## License
-
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
-
-## Support
-
-If you encounter any issues or have questions, please:
-1. Check the existing issues in the GitHub repository
-2. Create a new issue if your problem isn't already reported
-3. Provide as much detail as possible about your environment and the problem
-
-## Acknowledgments
-
-### Core Technology
-- [whisper.cpp](https://github.com/ggerganov/whisper.cpp) - High-performance inference of OpenAI's Whisper model
-- [FluidAudio](https://github.com/FluidInference/FluidAudio) - Used for Parakeet model implementation
-- [TranscribeCpp for Swift](https://github.com/Beingpax/Transcribe-cpp-swift) - SwiftPM distribution of [transcribe.cpp](https://github.com/handy-computer/transcribe.cpp), used for local GGUF transcription models
-- [SenseVoice Small](https://huggingface.co/FunAudioLLM/SenseVoiceSmall) by FunAudioLLM / Alibaba - Multilingual model available under the [FunASR Model Open Source License Agreement](https://github.com/modelscope/FunASR/blob/main/MODEL_LICENSE)
-
-### Essential Dependencies
-- [Sparkle](https://github.com/sparkle-project/Sparkle) - Keeping VoiceInk up to date
-- [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) - User-customizable keyboard shortcuts
-- [LaunchAtLogin](https://github.com/sindresorhus/LaunchAtLogin) - Launch at login functionality
-- [MediaRemoteAdapter](https://github.com/ejbills/mediaremote-adapter) - Media playback control during recording
-- [Zip](https://github.com/marmelroy/Zip) - File compression and decompression utilities
-- [Swift Atomics](https://github.com/apple/swift-atomics) - Low-level atomic operations for thread-safe concurrent programming
-
-
----
-
-Made with ❤️ by Pax
+Original VoiceInk by its upstream authors. This fork is not an official OpenAI integration. Distributed under [GPL-3.0](LICENSE).

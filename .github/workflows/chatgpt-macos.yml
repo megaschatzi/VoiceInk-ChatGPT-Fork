@@ -2,7 +2,7 @@ name: VoiceInk ChatGPT macOS
 
 on:
   push:
-    branches: [feature/chatgpt-native]
+    branches: [main, feature/chatgpt-native]
   workflow_dispatch:
     inputs:
       publish_release:
@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: chatgpt-macos-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -55,27 +55,20 @@ jobs:
         run: make local LOCAL_CODESIGN_IDENTITY=-
       - name: Verify and package app
         id: package
-        run: |
-          set -euo pipefail
-          APP="$HOME/Downloads/VoiceInk ChatGPT.app"
-          test -d "$APP"
-          test "$(/usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' "$APP/Contents/Info.plist")" = "com.megaschatzi.VoiceInk.ChatGPT"
-          codesign --verify --deep --strict "$APP"
-          echo "build_number=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' "$APP/Contents/Info.plist")" >> "$GITHUB_OUTPUT"
-          echo "app_version=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' "$APP/Contents/Info.plist")" >> "$GITHUB_OUTPUT"
-          ditto -c -k --sequesterRsrc --keepParent "$APP" VoiceInk-ChatGPT-macOS.zip
-          shasum -a 256 VoiceInk-ChatGPT-macOS.zip > VoiceInk-ChatGPT-macOS.zip.sha256
+        run: bash scripts/package-chatgpt-macos.sh "$HOME/Downloads/VoiceInk ChatGPT.app" dist
       - uses: actions/upload-artifact@v4
         with:
           name: VoiceInk-ChatGPT-macOS
           path: |
-            VoiceInk-ChatGPT-macOS.zip
-            VoiceInk-ChatGPT-macOS.zip.sha256
+            dist/*.zip
+            dist/*.dmg
+            dist/SHA256SUMS
+            dist/release-manifest.json
           retention-days: 14
           if-no-files-found: error
 
   release:
-    if: (github.event_name == 'workflow_dispatch' && inputs.publish_release) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[release]'))
+    if: github.ref == 'refs/heads/main' && ((github.event_name == 'workflow_dispatch' && inputs.publish_release) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[release]')))
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -95,9 +88,7 @@ jobs:
           BUILD_NUMBER: ${{ needs.build.outputs.build_number }}
         run: |
           set -euo pipefail
-          shasum -a 256 -c VoiceInk-ChatGPT-macOS.zip.sha256
-          gh release create "$RELEASE_TAG" \
-            VoiceInk-ChatGPT-macOS.zip VoiceInk-ChatGPT-macOS.zip.sha256 \
-            --target "$GITHUB_SHA" --prerelease \
-            --title "VoiceInk ChatGPT — build $BUILD_NUMBER" \
-            --notes-file .github/chatgpt-release-notes.md
+          shasum -a 256 -c SHA256SUMS
+          APP_VERSION="${{ needs.build.outputs.app_version }}"
+          PACKAGE="VoiceInk-${APP_VERSION}-ChatGPT-Build-${BUILD_NUMBER}"
+          bash scripts/publish-chatgpt-release.sh "$RELEASE_TAG" "$APP_VERSION" "$BUILD_NUMBER" "$GITHUB_SHA"

@@ -1,83 +1,29 @@
-# VoiceInk ChatGPT test app
+# Build and release
 
-For an overview of audio transcription, text enhancement and reusable components,
-see [Native ChatGPT integration](CHATGPT-INTEGRATION.md).
+## Local build
 
-Use your existing ChatGPT subscription for audio transcription and optional text
-enhancement. The test user reports testing with ChatGPT Plus and Pro ($100/month); access
-and limits remain account-dependent. No API key or separate API setup is required, but included
-audio minutes and billing treatment of this experimental route are not guaranteed.
-
-This development copy adds an experimental direct ChatGPT/Codex OAuth
-connection. It needs neither an API key nor an installed Codex CLI. It uses a
-browser device-code sign-in, stores credentials in a separate non-syncing macOS
-Keychain item, and refreshes tokens when needed. The native OAuth protocol follows
-OpenAI's public Codex client implementation. This is separate from the general
-Sign in with ChatGPT token-sharing flow, which currently does not support audio.
-
-## Install a test build
-
-[Download build 227 ZIP](https://github.com/megaschatzi/VoiceInk-ChatGPT/releases/download/v2.25-chatgpt-build227/VoiceInk-ChatGPT-macOS.zip) (no GitHub sign-in required).
-
-
-1. Open the [build 227 release page](https://github.com/megaschatzi/VoiceInk-ChatGPT/releases/tag/v2.25-chatgpt-build227)
-   and follow its **Download VoiceInk-ChatGPT-macOS.zip** link. No GitHub account is required.
-2. Unzip the ZIP and move **VoiceInk ChatGPT.app** into Applications.
-3. The build is ad-hoc signed, not Apple-notarized. macOS may require explicit
-   approval under System Settings → Privacy & Security. Do not disable Gatekeeper.
-4. Grant microphone and accessibility permissions to the new app. Run one dictation
-   app at a time to avoid duplicate global keyboard shortcuts.
-
-The app has its own bundle identifier, preferences, credential namespace, SwiftData
-stores and recordings directory. It does not replace VoiceInk or open its stores.
-FluidAudio's model cache remains managed by that library and may be shared.
-
-## Keep existing settings
-
-In the original VoiceInk, use **Settings → Backup → Export Settings**. In VoiceInk
-ChatGPT, use **Settings → Backup → Import Settings** and choose the categories to
-copy. The existing importer supports modes, prompts, shortcuts and dictionary data.
-History is not migrated. Account connections and macOS permissions are separate.
-Keep the original app installed until you have verified your imported settings.
-
-## Connect and test
-
-1. Open **Model Catalog → Cloud → ChatGPT**.
-2. Choose **Sign in with ChatGPT**. Enter the displayed one-time code on OpenAI's
-   sign-in page. Device code authentication must be enabled for your account.
-3. Use **Test text connection** and **Test audio file…** to verify the new grant.
-   Tests send their text/audio to OpenAI and use whatever allowance the account permits.
-4. For text enhancement, choose a model and **Reasoning level** in each mode.
-   Existing modes keep Low; expand **Model and language guidance** for hints.
-5. Choose **Use ChatGPT for dictation** for the global transcription model, or
-   select **ChatGPT Dictation** in the relevant mode. For text cleanup, enable
-   **AI Enhancement** in that mode and choose **ChatGPT** plus the desired model.
-
-ChatGPT's dictation backend chooses the speech model; this app does not advertise
-a specific Whisper/Transcribe model. The text model is independent and configurable.
-Model presets do not guarantee entitlement for every account.
-
-## Limits
-
-The audio request uses `https://chatgpt.com/backend-api/transcribe`, which has been reported working
-inside the native test app after device-code sign-in. A live text diagnostic using
-the app login also returned a complete SSE response; account-specific app testing
-is still necessary. This internal endpoint has no
-published compatibility guarantee or confirmed included minutes/pricing for this
-integration. Text uses the Codex Responses route. Usage and access failures are
-reported without switching accounts, providers or billing methods. A 401 is retried
-once after token refresh; a 403 or 429 is not retried automatically.
-
-No user login, tokens, recordings or settings are needed in GitHub Actions.
-
-## Build locally
-
-Requires Xcode, CMake and macOS 15 or later:
+Requires macOS, Xcode, CMake and Python 3.11+ for packaging.
 
 ```sh
 swift test
+python3 scripts/test-chatgpt-mode-settings.py
 bash scripts/build-whisper-macos.sh
 make local LOCAL_CODESIGN_IDENTITY=-
+bash scripts/package-chatgpt-macos.sh "$HOME/Downloads/VoiceInk ChatGPT.app" dist
 ```
 
-The app is copied to `~/Downloads/VoiceInk ChatGPT.app`.
+The app is copied to `~/Downloads/VoiceInk ChatGPT.app`. Packages are written to `dist/`.
+
+## Releases
+
+Run **VoiceInk ChatGPT macOS** with **publish_release** enabled, or push a release commit containing `[release]` to `main`.
+
+The workflow tests the native protocol and settings migration, builds the app, checks its signature, mounts and checks the DMG, then publishes DMG, ZIP, SHA256SUMS and a source manifest. Naming: **VoiceInk 2.25 — ChatGPT Build 228**. The base version and ChatGPT build are independent; the build counter always increases.
+
+## Upstream updates
+
+Merge upstream changes into a review branch, resolve conflicts and run the build before updating `main`. Update `UPSTREAM.json` to the exact base commit/version/build. Never overwrite the fork with a forced sync.
+
+The ChatGPT app identifier, Keychain namespace and storage directories must stay unchanged across updates. Its original VoiceInk updater is disabled. No ChatGPT tokens or audio files are used in CI.
+
+[Install/update the app](README.md#-install-or-update)
