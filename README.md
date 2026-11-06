@@ -1,4 +1,4 @@
-# VoiceInk ChatGPT
+# VoiceInk ChatGPT — by Spezi
 
 Native ChatGPT sign-in for **audio transcription and text enhancement**. No API key or installed CLI required. Based on [Beingpax/VoiceInk](https://github.com/Beingpax/VoiceInk), with separate app identity and storage so both apps can stay installed.
 
@@ -10,6 +10,10 @@ Native ChatGPT sign-in for **audio transcription and text enhancement**. No API 
 - Separate settings, Keychain credentials, history and recordings from the original VoiceInk.
 
 User-tested with **ChatGPT Plus and Pro ($100/month)**. Model access and usage limits depend on the account. This uses experimental internal endpoints; included audio minutes, billing treatment and continued availability are not guaranteed. Audio and enabled enhancement context are sent to OpenAI.
+
+### 🧠 Model and reasoning selection
+
+In a mode, enable **AI Enhancement → ChatGPT**, then choose a model and reasoning level. Each mode keeps its own selection. Choose a preset or enter a custom model ID; available reasoning levels depend on the model.
 
 ## 🚀 Install or update
 
@@ -37,4 +41,4 @@ Find downloads and version details in GitHub's **Releases** section. Requires ma
 
 [Build instructions](CHATGPT-BUILD.md) · [Integration details](CHATGPT-INTEGRATION.md) · [Project status](PROJECT_STATUS.md) · [Changelog](CHANGELOG.md) · [Upstream provenance](UPSTREAM.json)
 
-Original VoiceInk by its upstream authors. This fork is not an official OpenAI integration. Distributed under [GPL-3.0](LICENSE).
+ChatGPT integration maintained by **Spezi (Codex)**. Original VoiceInk by its upstream authors. This fork is not an official OpenAI integration. Distributed under [GPL-3.0](LICENSE).

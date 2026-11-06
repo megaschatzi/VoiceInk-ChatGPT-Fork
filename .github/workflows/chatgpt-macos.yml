@@ -11,6 +11,7 @@ on:
       - CHATGPT-BUILD.md
       - CHATGPT-INTEGRATION.md
       - .github/chatgpt-release-notes.md
+      - docs/images/**
   workflow_dispatch:
     inputs:
       publish_release:
