@@ -7,6 +7,7 @@ Updated: 2026-11-06 UTC. Read with `AGENTS.md`; use Actions for live build statu
 - Public fork: [megaschatzi/VoiceInk-ChatGPT-Fork](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork), parent `Beingpax/VoiceInk`, default branch `main`.
 - Upstream merged: `14f2c8f8faafb6c178d0823bf87cda92c622d78a`, VoiceInk **2.25**, upstream build **225**. See `UPSTREAM.json`.
 - Published: **[VoiceInk 2.25 — ChatGPT Build 228](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/releases/tag/v2.25-chatgpt-build228)**, source `8b10d4e7800d848b39c73d52f202dbb0a1a5051e`. Preserve the legacy repository and existing release URLs.
+- The legacy repository's main branch is now a short link-only landing page plus its license. Earlier history, branches and releases remain available; active development belongs in this fork.
 - Separate app: `VoiceInk ChatGPT.app`, bundle ID `com.megaschatzi.VoiceInk.ChatGPT`. Preserve its existing Keychain namespace and data directories; keep original VoiceInk independent.
 - Native ChatGPT login supports experimental audio transcription and text enhancement without an API key or installed CLI. Per-mode model/reasoning settings and custom model IDs are supported; CLI enhancement remains available.
 
@@ -18,7 +19,7 @@ Updated: 2026-11-06 UTC. Read with `AGENTS.md`; use Actions for live build statu
 - Independent packaging and upstream merge reviews were completed. No live ChatGPT account was used in CI; user testing on a Mac remains the runtime confirmation.
 - Release packaging verifies the extracted ZIP and mounted DMG, app identity/version and signatures. Publication uploads complete DMG, ZIP, checksums and source provenance before making a release visible.
 - Downloads and version details belong in GitHub Releases. README installation guidance stays general.
-- The setup guide includes three real captures of released Build 228: ChatGPT sign-in, ChatGPT Dictation selection, and text model/reasoning selection. Selection examples use clearly labeled disposable demo settings, without a real account or service request. All requested controls were visually checked independently. Documentation images do not trigger an app rebuild.
+- The setup guide includes three real captures of released Build 228: ChatGPT sign-in, ChatGPT Dictation selection, and text model/reasoning selection. Selection examples use clearly labeled disposable demo settings, without a real account or service request. Orange arrow overlays highlight the controls without changing their text. All requested controls were visually checked independently. Documentation images do not trigger an app rebuild.
 - Build 228 is a regular release marked **Latest**; future releases are marked latest after all assets upload. The experimental nature of the ChatGPT integration remains documented.
 - New agent commits use **Spezi (Codex)**. Existing commits and upstream attribution remain unchanged. Keep commits focused on lasting changes; temporary build progress belongs in Actions or local notes.
 - At the user's request, redundant migration progress commits were consolidated after a verified recoverable backup. The final file tree, upstream merge and earlier feature history were preserved. Do not rewrite the published release commit/tag.
