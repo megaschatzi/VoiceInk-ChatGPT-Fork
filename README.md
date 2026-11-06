@@ -21,7 +21,17 @@ Find downloads and version details in GitHub's **Releases** section. Requires ma
 4. Open **AI Models → Cloud → ChatGPT**, sign in and test the connection.
 5. In a mode, choose **ChatGPT Dictation** and optionally enable **AI Enhancement → ChatGPT**. Select a text model and reasoning level.
 
-To copy settings from the original app: export under **Settings → Backup**, then import in VoiceInk ChatGPT. History and account connections are not migrated. Run one dictation app at a time to avoid shortcut conflicts.
+## 📥 Import your VoiceInk settings
+
+1. 📤 **Original VoiceInk:** Open **Settings → Backup** and export a settings backup (`.json`).
+2. 📥 **VoiceInk ChatGPT:** Open **Settings → Backup** and import that same file. Choose **All** or **Individual categories** to select what to restore.
+
+- ✅ **Can be transferred:** modes, custom prompts, dictionary words/replacements, keyboard shortcuts, general settings and custom model definitions.
+- 🔑 **Set up again:** ChatGPT/provider sign-ins, API keys and macOS permissions.
+- 🗂️ **Stay in the original app:** transcription history and audio recordings. Importing settings leaves the original app's data intact.
+- ⌨️ **Avoid shortcut conflicts:** quit the other dictation app while using this one.
+
+**Already using VoiceInk ChatGPT?** Just replace **VoiceInk ChatGPT.app** when updating. Its existing settings stay in place; no export/import is needed.
 
 ## 🛠️ Development
 
