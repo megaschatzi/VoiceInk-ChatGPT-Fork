@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       publish_release:
-        description: Publish the verified app ZIP as a public prerelease
+        description: Publish the verified app DMG and ZIP as a public prerelease
         type: boolean
         default: false
 
@@ -28,6 +28,23 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Select supported Xcode toolchain
+        run: sudo xcode-select --switch /Applications/Xcode_26.6.app/Contents/Developer
+      - name: Inspect native build toolchain
+        run: |
+          test "$(uname -m)" = arm64
+          xcodebuild -version
+          xcrun --sdk macosx --show-sdk-version
+          python3 - <<'PY'
+          import re
+          import subprocess
+          import sys
+          output = subprocess.check_output(['xcrun', 'swift', '--version'], text=True)
+          print(output)
+          version = re.search(r'Swift version (\d+)\.(\d+)', output)
+          if not version or tuple(map(int, version.groups())) < (6, 3):
+              sys.exit('Updated MLX dependencies require Swift 6.3 or later.')
+          PY
       - name: Test ChatGPT protocol
         run: swift test
       - name: Test mode settings migration and backup round trips
@@ -80,7 +97,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: VoiceInk-ChatGPT-macOS
-      - name: Publish verified ZIP and checksum
+      - name: Publish verified DMG, ZIP and checksums
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}

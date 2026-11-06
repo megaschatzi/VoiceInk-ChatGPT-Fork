@@ -2,7 +2,7 @@
 
 ## Local build
 
-Requires macOS, Xcode, CMake and Python 3.11+ for packaging.
+Requires macOS, Xcode with Swift 6.3+ (the updated MLX dependencies require it), CMake and Python 3.11+ for packaging. CI uses the standard Apple Silicon macOS 26 image with Xcode 26.6.
 
 ```sh
 swift test
