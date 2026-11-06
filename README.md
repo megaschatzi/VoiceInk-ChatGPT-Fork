@@ -1,4 +1,4 @@
-# VoiceInk ChatGPT — by Spezi
+# VoiceInk ChatGPT | by Spezi
 
 Native ChatGPT sign-in for **audio transcription and text enhancement**. No API key or installed CLI required. Based on [Beingpax/VoiceInk](https://github.com/Beingpax/VoiceInk), with separate app identity and storage so both apps can stay installed.
 
