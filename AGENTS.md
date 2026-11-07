@@ -2,6 +2,17 @@
 
 Read `PROJECT_STATUS.md`, `CHATGPT-INTEGRATION.md` and `UPSTREAM.json` before making changes. Keep GitHub documentation concise and in English.
 
+## Start here
+
+This repository is the maintained fork; the conversation and previous agent workspace are not required to continue development.
+
+1. Read `PROJECT_STATUS.md` for the released baseline and verified evidence, then `CHATGPT-INTEGRATION.md` and `UPSTREAM.json` for behavior and upstream provenance.
+2. Read `CHATGPT-BUILD.md` for local/CI checks and release publication. `CHANGELOG.md` and GitHub Releases describe shipped changes; the latest source on `main` may include documentation newer than the release tag.
+3. Check the working tree and current remote state before editing. Use a review branch, preserve app identity and existing settings, validate the change, then deliver a coherent update.
+4. Maintain the status, relevant instructions and changelog with the implementation. Report what was actually verified and any remaining limitation; never depend on unpublished chat context or local-only scripts.
+
+The detailed maintenance rules below apply to every agent, including sub-agents.
+
 For new agent-authored commits, use author and committer name `Spezi (Codex)` with `spezi@voiceink-chatgpt.invalid` (an intentionally unlinked reserved-domain address). Preserve historical attribution; do not rewrite history merely to rename authors.
 
 - Preserve the separate VoiceInk ChatGPT app identity, Keychain namespace and data directories. Never migrate or overwrite the original VoiceInk app's data implicitly.

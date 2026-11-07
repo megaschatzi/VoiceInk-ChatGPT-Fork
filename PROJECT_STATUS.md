@@ -33,3 +33,7 @@ VoiceInk **2.26 — ChatGPT Build 229** integrates the exact upstream release ta
 Future upstream updates require a review branch, compatibility checks and a new verified release. No automatic upstream merge is configured. Increment the existing ChatGPT build counter for the next app release; keep downloads in GitHub Releases and update this handoff at delivery milestones.
 
 Keep private operations, credentials, business prompts, personal dictionaries and recordings out of this public repository.
+
+## Agent handoff
+
+`AGENTS.md` provides the startup reading order and maintenance rules. The integration, build/release guide, changelog and upstream metadata are tracked here, so a new agent can resume from a fresh checkout without the previous conversation or workspace. Keep release tags authoritative for binary provenance; `main` may contain later documentation. Personal prompts, dictionaries and app credentials are outside this source repository.
