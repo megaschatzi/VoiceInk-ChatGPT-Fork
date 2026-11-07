@@ -37,3 +37,7 @@ Keep private operations, credentials, business prompts, personal dictionaries an
 ## Agent handoff
 
 `AGENTS.md` provides the startup reading order and maintenance rules. The integration, build/release guide, changelog and upstream metadata are tracked here, so a new agent can resume from a fresh checkout without the previous conversation or workspace. Keep release tags authoritative for binary provenance; `main` may contain later documentation. Personal prompts, dictionaries and app credentials are outside this source repository.
+
+## Upstream feature proposal
+
+The user submitted [Beingpax/VoiceInk#1063](https://github.com/Beingpax/VoiceInk/issues/1063): **Native ChatGPT sign-in for audio transcription and text enhancement (no API key or CLI)**. It links this fork, implementation details, the release and three setup screenshots. It is a feature suggestion, not a pull request, in line with upstream's current contribution policy. Verified open with no comments on 2026-11-07; check the issue directly for later maintainer feedback before planning an upstream contribution. No automatic issue monitoring is configured.
