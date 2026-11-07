@@ -6,25 +6,25 @@ Updated: 2026-11-07 UTC. Read with `AGENTS.md`; use Actions for live build statu
 
 - Public fork: [megaschatzi/VoiceInk-ChatGPT-Fork](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork), parent `Beingpax/VoiceInk`, default branch `main`.
 - Upstream merged: `4bc74caddfad6fdfab71e5957451b83b33c1a2c5`, VoiceInk **2.26**, upstream build **226**. See `UPSTREAM.json`.
-- Published: **[VoiceInk 2.25 — ChatGPT Build 228](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/releases/tag/v2.25-chatgpt-build228)**, source `8b10d4e7800d848b39c73d52f202dbb0a1a5051e`. Preserve the legacy repository and existing release URLs.
+- Published: **[VoiceInk 2.26 — ChatGPT Build 229](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/releases/tag/v2.26-chatgpt-build229)**, source `750fdeb5b312a54dce412ecf4600631d92e75abd`. Preserve the legacy repository and existing release URLs.
 - The legacy repository's main branch is now a short link-only landing page plus its license. Earlier history, branches and releases remain available; active development belongs in this fork.
 - Separate app: `VoiceInk ChatGPT.app`, bundle ID `com.megaschatzi.VoiceInk.ChatGPT`. Preserve its existing Keychain namespace and data directories; keep original VoiceInk independent.
 - Native ChatGPT login supports experimental audio transcription and text enhancement without an API key or installed CLI. Per-mode model/reasoning settings and custom model IDs are supported; CLI enhancement remains available.
 
-## Next release
+## Latest release
 
-VoiceInk **2.26 — ChatGPT Build 229** integrates the exact upstream release tag. Only version/build metadata, upstream release notes and its original packaging script changed after our previous base; the streaming fixes were already included. The separate ChatGPT app identity and runtime implementation are unchanged. Review-branch validation passed on native Apple Silicon: protocol tests, mode migration/backup checks, client typecheck, full app build and signed ZIP/DMG validation ([run 42360324482](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/42360324482)). Independent merge/packaging review found no blocker. Build 228 remains the published baseline until the main-branch release workflow and public download checks succeed.
+VoiceInk **2.26 — ChatGPT Build 229** integrates the exact upstream release tag. Only version/build metadata, upstream release notes and its original packaging script changed after our previous base; the streaming fixes were already included. The separate ChatGPT app identity and runtime implementation are unchanged. Independent merge/packaging review found no blocker. Review-branch validation passed ([run 42360324482](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/42360324482)); the final source was built and published by the main-branch release workflow below.
 
 ## Validation and delivery
 
-- Passed on native Apple Silicon: 31 protocol tests, mode-settings migration/backup round trips, native-client typechecking and the full app build. Verified [release workflow](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/42289949191).
+- Passed on native Apple Silicon: 31 protocol tests, mode-settings migration/backup round trips, native-client typechecking and the full app build. Verified [release workflow](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/42361416234).
 - The updated MLX dependencies require **Swift 6.3+**. The successful build used **Xcode 26.6 / Swift 6.3.3 on macOS 26**.
-- ZIP and DMG were signed and verified in CI. Both published downloads were retrieved without a login, their checksums and manifest matched, and the ZIP contained bundle `com.megaschatzi.VoiceInk.ChatGPT`, version `2.25`, build `228`, minimum macOS `15.0`, with an `arm64` executable. Signing is ad hoc, not Apple notarization.
+- ZIP and DMG were signed and verified in CI. Both published downloads were retrieved without a login, their checksums and manifest matched, and the ZIP contained bundle `com.megaschatzi.VoiceInk.ChatGPT`, version `2.26`, build `229`, minimum macOS `15.0`, with an `arm64` executable. Signing is ad hoc, not Apple notarization.
 - Independent packaging and upstream merge reviews were completed. No live ChatGPT account was used in CI; user testing on a Mac remains the runtime confirmation.
 - Release packaging verifies the extracted ZIP and mounted DMG, app identity/version and signatures. Publication uploads complete DMG, ZIP, checksums and source provenance before making a release visible.
 - Downloads and version details belong in GitHub Releases. README installation guidance stays general.
 - The setup guide includes three real captures of released Build 228: ChatGPT sign-in, ChatGPT Dictation selection, and text model/reasoning selection. Selection examples use clearly labeled disposable demo settings, without a real account or service request. Full app screenshots use simple orange frames around the sign-in button, transcription model, and enhancement settings, without zoomed details or arrows. Original dimensions and all pixels outside the frame outlines are preserved; the three final images were visually checked. Documentation images do not trigger an app rebuild.
-- Build 228 is a regular release marked **Latest**; future releases are marked latest after all assets upload. The experimental nature of the ChatGPT integration remains documented.
+- Build 229 is a regular release marked **Latest**; future releases are marked latest after all assets upload. The experimental nature of the ChatGPT integration remains documented.
 - New agent commits use **Spezi (Codex)**. Existing commits and upstream attribution remain unchanged. Keep commits focused on lasting changes; temporary build progress belongs in Actions or local notes.
 - At the user's request, redundant migration progress commits were consolidated after a verified recoverable backup. The final file tree, upstream merge and earlier feature history were preserved. Do not rewrite the published release commit/tag.
 
