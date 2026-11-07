@@ -1,15 +1,19 @@
 # Project status
 
-Updated: 2026-11-06 UTC. Read with `AGENTS.md`; use Actions for live build status.
+Updated: 2026-11-07 UTC. Read with `AGENTS.md`; use Actions for live build status.
 
 ## Current baseline
 
 - Public fork: [megaschatzi/VoiceInk-ChatGPT-Fork](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork), parent `Beingpax/VoiceInk`, default branch `main`.
-- Upstream merged: `14f2c8f8faafb6c178d0823bf87cda92c622d78a`, VoiceInk **2.25**, upstream build **225**. See `UPSTREAM.json`.
+- Upstream merged: `4bc74caddfad6fdfab71e5957451b83b33c1a2c5`, VoiceInk **2.26**, upstream build **226**. See `UPSTREAM.json`.
 - Published: **[VoiceInk 2.25 — ChatGPT Build 228](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/releases/tag/v2.25-chatgpt-build228)**, source `8b10d4e7800d848b39c73d52f202dbb0a1a5051e`. Preserve the legacy repository and existing release URLs.
 - The legacy repository's main branch is now a short link-only landing page plus its license. Earlier history, branches and releases remain available; active development belongs in this fork.
 - Separate app: `VoiceInk ChatGPT.app`, bundle ID `com.megaschatzi.VoiceInk.ChatGPT`. Preserve its existing Keychain namespace and data directories; keep original VoiceInk independent.
 - Native ChatGPT login supports experimental audio transcription and text enhancement without an API key or installed CLI. Per-mode model/reasoning settings and custom model IDs are supported; CLI enhancement remains available.
+
+## Next release
+
+VoiceInk **2.26 — ChatGPT Build 229** integrates the exact upstream release tag. Only version/build metadata, upstream release notes and its original packaging script changed after our previous base; the streaming fixes were already included. The separate ChatGPT app identity and runtime implementation are unchanged. Review-branch macOS validation is required before integration and publication; Build 228 remains the published baseline until release verification succeeds.
 
 ## Validation and delivery
 

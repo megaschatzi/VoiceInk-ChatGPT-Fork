@@ -1,10 +1,9 @@
 ### ✨ Changes
-- Moved to a real VoiceInk fork; existing ChatGPT features and app settings stay intact.
-- Added DMG and ZIP packages with versioned names and source metadata.
+- Aligned with VoiceInk 2.26. Its Soniox/ElevenLabs streaming fixes were already included in our Build 228.
+- Kept native ChatGPT transcription, text enhancement, custom models and reasoning settings intact.
 
 ### 🔄 Upstream
-VoiceInk 2.25, original build 225 · commit `14f2c8f8faafb6c178d0823bf87cda92c622d78a`.
-Includes streaming fixes, recorder placement and dependency updates.
+VoiceInk 2.26, original build 226 · commit `4bc74caddfad6fdfab71e5957451b83b33c1a2c5`.
 
 ### 📦 Install / update
 Download the DMG or ZIP below. Quit **VoiceInk ChatGPT**, then replace the app in Applications. Existing settings stay; the original VoiceInk remains separate.

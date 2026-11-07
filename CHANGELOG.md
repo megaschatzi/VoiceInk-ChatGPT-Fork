@@ -1,5 +1,12 @@
 # Changelog
 
+## VoiceInk 2.26 — ChatGPT Build 229 · 2026-11-07
+
+- 🔄 Aligned with upstream VoiceInk 2.26; its streaming fixes were already included in Build 228.
+- 🔒 Preserved ChatGPT features, app identity and existing settings.
+
+Upstream: `Beingpax/VoiceInk` · `4bc74caddfad6fdfab71e5957451b83b33c1a2c5` · version 2.26, build 226.
+
 ## Documentation · 2026-11-06
 
 - 🖼️ Added three full app screenshots with simple frames highlighting sign-in, transcription and model/reasoning controls.

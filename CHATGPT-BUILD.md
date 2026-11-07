@@ -18,7 +18,7 @@ The app is copied to `~/Downloads/VoiceInk ChatGPT.app`. Packages are written to
 
 Run **VoiceInk ChatGPT macOS** with **publish_release** enabled, or push a release commit containing `[release]` to `main`.
 
-The workflow tests the native protocol and settings migration, builds the app, checks its signature, mounts and checks the DMG, then publishes DMG, ZIP, SHA256SUMS and a source manifest as the latest regular release. Naming: **VoiceInk 2.25 — ChatGPT Build 228**. The base version and ChatGPT build are independent; the build counter always increases.
+The workflow tests the native protocol and settings migration, builds the app, checks its signature, mounts and checks the DMG, then publishes DMG, ZIP, SHA256SUMS and a source manifest as the latest regular release. Naming: **VoiceInk 2.26 — ChatGPT Build 229**. The base version and ChatGPT build are independent; the build counter always increases.
 
 ## Upstream updates
 
