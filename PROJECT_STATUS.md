@@ -13,7 +13,7 @@ Updated: 2026-11-07 UTC. Read with `AGENTS.md`; use Actions for live build statu
 
 ## Next release
 
-VoiceInk **2.26 — ChatGPT Build 229** integrates the exact upstream release tag. Only version/build metadata, upstream release notes and its original packaging script changed after our previous base; the streaming fixes were already included. The separate ChatGPT app identity and runtime implementation are unchanged. Review-branch macOS validation is required before integration and publication; Build 228 remains the published baseline until release verification succeeds.
+VoiceInk **2.26 — ChatGPT Build 229** integrates the exact upstream release tag. Only version/build metadata, upstream release notes and its original packaging script changed after our previous base; the streaming fixes were already included. The separate ChatGPT app identity and runtime implementation are unchanged. Review-branch validation passed on native Apple Silicon: protocol tests, mode migration/backup checks, client typecheck, full app build and signed ZIP/DMG validation ([run 42360324482](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/42360324482)). Independent merge/packaging review found no blocker. Build 228 remains the published baseline until the main-branch release workflow and public download checks succeed.
 
 ## Validation and delivery
 
