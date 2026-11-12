@@ -6,7 +6,7 @@ Verified: **2026-11-12, Europe/Berlin**. This is a standalone development and re
 
 Maintain a VoiceInk fork that supports **native ChatGPT sign-in for audio transcription and optional LLM text enhancement**, without requiring an API key or installed CLI for that provider. Preserve the original VoiceInk features and allow both applications to coexist.
 
-The user authorized the upstream update and checked DMG/ZIP publication on 2026-11-12. Review branch `codex/upstream-2.27-build230` targets stable upstream 2.27 as ChatGPT Build 230. Publication is conditional on independent review, native CI and package verification; do not treat a prepared merge as a released binary.
+The user-authorized upstream update is published as **VoiceInk 2.27 — ChatGPT Build 230**. Independent review, native CI and public ZIP/DMG checks passed. See `PROJECT_STATUS.md` for evidence and runtime limitations. Future updates require the same deliberate merge and verification procedure.
 
 ### Entry points
 
@@ -18,28 +18,28 @@ The user authorized the upstream update and checked DMG/ZIP publication on 2026-
 
 Start with `AGENTS.md`, `PROJECT_STATUS.md`, this file, `CHATGPT-INTEGRATION.md`, `UPSTREAM.json` and `CHATGPT-BUILD.md`. `PROJECT_STATUS.md` is the durable current-state record; release tags and manifests identify the exact binary source. `main` can contain later documentation. Do not depend on the previous conversation or an old workspace.
 
-## 2. Verified baseline and next candidate
+## 2. Verified released baseline
 
 | Item | Verified value |
 | --- | --- |
-| Latest fork release | VoiceInk **2.26 — ChatGPT Build 229** |
-| Release tag | `v2.26-chatgpt-build229` |
-| Exact binary source | `750fdeb5b312a54dce412ecf4600631d92e75abd` |
-| Integrated upstream | `4bc74caddfad6fdfab71e5957451b83b33c1a2c5` |
-| Upstream marketing/build | 2.26 / 226 |
+| Latest fork release | VoiceInk **2.27 — ChatGPT Build 230** |
+| Release tag | `v2.27-chatgpt-build230` |
+| Exact binary source | `664f5904c06f4dc754d7d1e5b43323210aa25d47` |
+| Integrated upstream | `b5d1be9a7c7377dd059f37bb3e0f791b802d4001` |
+| Upstream marketing/build | 2.27 / 227 |
 | Minimum macOS | 15.0 |
 | Supported release architecture | Apple Silicon / arm64 |
-| Next unused ChatGPT build at verification | **230**, subject to a fresh release check |
-| Review validation | https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/42360324482 |
-| Final build/publication | https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/42361416234 |
+| Next unused ChatGPT build at verification | **231**, subject to a fresh release check |
+| Review validation | https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/43167075878 |
+| Final build/publication | https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/43168863938 |
 
-Build 229 passed 31 protocol tests, mode migration/backup checks, native-client typechecking, full app compilation, signature checks, extracted ZIP checks and mounted DMG checks. Public downloads were retrieved without login; checksums, source manifest, app identity, version/build, minimum macOS and arm64 executable matched. These are historical results for 229, not validation of a future update. No real ChatGPT account/audio was used in CI.
+Build 230 passed 31 protocol/client tests, mode migration/backup checks, API-key cache concurrency regression, native-client/API-key-manager typechecks, full app compilation, signatures, extracted ZIP checks and mounted DMG checks. Public downloads were retrieved without login; hashes, package sizes, source/upstream manifest and release tag matched. Both packages contained the expected identity, version/build, minimum macOS and arm64 executable. Signing is ad hoc, not Apple notarization. These are results for 230, not validation of future updates. No real ChatGPT account/audio or hardware recording was used in CI.
 
-**Upstream 2.27 is available**, published 2026-11-11. Tag `v2.27` resolves to `b5d1be9a7c7377dd059f37bb3e0f791b802d4001` at verification. Its release notes list ElevenLabs Scribe V3 support, keeping the display awake during dictation, and performance improvements. It is integrated in the current update as **VoiceInk 2.27 — ChatGPT Build 230**. Independent code review and native review validation passed ([run 43167075878](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/43167075878)). The final main-branch build/publication and public download checks remain pending until recorded in `PROJECT_STATUS.md`. Inspect newer upstream releases before future updates.
+**Upstream 2.27 is integrated**, published 2026-11-11, at tag `v2.27` / `b5d1be9a7c7377dd059f37bb3e0f791b802d4001`. It adds ElevenLabs Scribe V3, display wake prevention during dictation and performance improvements. The fork also fixes a concurrent API-key presence-cache race; transient Keychain errors are not cached. Check newer stable releases before selecting the next base.
 
-### Specific 2.27 review hotspots
+### 2.27 maintenance hotspots
 
-The upstream diff from our recorded base includes the Xcode project, app/engine observation, dashboard performance, recorder sleep prevention, API-key presence caching, KeychainService, ElevenLabs batch/streaming providers and the upstream appcast.
+The upstream 2.26 → 2.27 diff includes the Xcode project, app/engine observation, dashboard performance, recorder sleep prevention, API-key presence caching, KeychainService, ElevenLabs batch/streaming providers and the upstream appcast.
 
 - `KeychainService.exists(forKey:syncable:)` changes from `Bool` to `Bool?`, distinguishing inaccessible/locked Keychain from a missing item. Audit every caller and keep our non-syncing ChatGPT credential storage, generation guards, refresh/sign-out and local-build fallback intact. Do not cache a transient Keychain failure as a missing account.
 - Review APIKeyManager's new presence cache and invalidation; native ChatGPT account state must not be mistaken for an API key.
@@ -112,7 +112,7 @@ Do not require that CLI for native ChatGPT audio or text enhancement. There is n
 | Connection UI | `VoiceInk/Features/ModelLibrary/Views/ChatGPT/ChatGPTConnectionView.swift` |
 | Per-mode persistence/UI | `VoiceInk/Features/Modes/State/ModeConfig.swift`, `ModeConfigDraft.swift`, `Views/ModeConfigFormView.swift` |
 | Enhancement routing | `VoiceInk/Features/Enhancement/Workflows/AIEnhancementService.swift` |
-| Focused tests | `Tests/ChatGPTCoreTests`, `scripts/test-chatgpt-mode-settings.py` |
+| Focused tests | `Tests/ChatGPTCoreTests`, `scripts/test-chatgpt-mode-settings.py`, `scripts/test-api-key-cache.sh` |
 | CI/release | `.github/workflows/chatgpt-macos.yml`, `scripts/package-chatgpt-macos.sh`, `scripts/publish-chatgpt-release.sh`, `scripts/release-manifest.py` |
 
 The original LLM failure occurred despite successful audio transcription and working CLI enhancement. A user-run diagnostic confirmed HTTP 200 with SSE events but **no Content-Type header**. Keep tolerant SSE framing/line-ending handling, JSON event validation, terminal completion checks and EOF handling; do not treat a successful response as one JSON object or reject it solely for a missing MIME header. Reject genuinely incomplete responses and return useful errors.
@@ -182,7 +182,7 @@ Required release assets:
 - `SHA256SUMS`.
 - `release-manifest.json` with exact source, upstream provenance and package hashes.
 
-Naming example for the candidate above: `VoiceInk-2.27-ChatGPT-Build-230.dmg` / `.zip`, tag `v2.27-chatgpt-build230`, title **VoiceInk 2.27 — ChatGPT Build 230**. Refresh numbers from live state before using them. Keep completed releases regular **Latest** releases, not drafts/prereleases. Never replace an existing release's tag or binaries with a different build.
+Naming example from the released baseline: `VoiceInk-2.27-ChatGPT-Build-230.dmg` / `.zip`, tag `v2.27-chatgpt-build230`, title **VoiceInk 2.27 — ChatGPT Build 230**. Refresh numbers from live state before using them. Keep completed releases regular **Latest** releases, not drafts/prereleases. Never replace an existing release's tag or binaries with a different build.
 
 The fork publisher/package scripts are distinct from upstream `scripts/release.sh`; that upstream script targets the original app's distribution/signing assumptions. Do not substitute it for the fork pipeline.
 
