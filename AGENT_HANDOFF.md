@@ -35,7 +35,7 @@ Start with `AGENTS.md`, `PROJECT_STATUS.md`, this file, `CHATGPT-INTEGRATION.md`
 
 Build 229 passed 31 protocol tests, mode migration/backup checks, native-client typechecking, full app compilation, signature checks, extracted ZIP checks and mounted DMG checks. Public downloads were retrieved without login; checksums, source manifest, app identity, version/build, minimum macOS and arm64 executable matched. These are historical results for 229, not validation of a future update. No real ChatGPT account/audio was used in CI.
 
-**Upstream 2.27 is available**, published 2026-11-11. Tag `v2.27` resolves to `b5d1be9a7c7377dd059f37bb3e0f791b802d4001` at verification. Its release notes list ElevenLabs Scribe V3 support, keeping the display awake during dictation, and performance improvements. It is not yet integrated into this fork. If that remains the next selected base, the expected new release is **VoiceInk 2.27 — ChatGPT Build 230**. Inspect newer upstream releases before choosing a target.
+**Upstream 2.27 is available**, published 2026-11-11. Tag `v2.27` resolves to `b5d1be9a7c7377dd059f37bb3e0f791b802d4001` at verification. Its release notes list ElevenLabs Scribe V3 support, keeping the display awake during dictation, and performance improvements. It is integrated in the current update as **VoiceInk 2.27 — ChatGPT Build 230**. Independent code review and native review validation passed ([run 43167075878](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork/actions/runs/43167075878)). The final main-branch build/publication and public download checks remain pending until recorded in `PROJECT_STATUS.md`. Inspect newer upstream releases before future updates.
 
 ### Specific 2.27 review hotspots
 
