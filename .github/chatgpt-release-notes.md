@@ -1,9 +1,10 @@
 ### ✨ Changes
-- Aligned with VoiceInk 2.26. Its Soniox/ElevenLabs streaming fixes were already included in our Build 228.
-- Kept native ChatGPT transcription, text enhancement, custom models and reasoning settings intact.
+- Integrated stable VoiceInk 2.27: ElevenLabs Scribe V3, display wake prevention during dictation and performance improvements.
+- Preserved native ChatGPT transcription/enhancement, custom models, reasoning settings and separate app data.
+- Prevented concurrent API-key checks from retaining stale availability after a key is saved or deleted. Transient Keychain failures are retried.
 
 ### 🔄 Upstream
-VoiceInk 2.26, original build 226 · commit `4bc74caddfad6fdfab71e5957451b83b33c1a2c5`.
+VoiceInk 2.27, original build 227 · commit `b5d1be9a7c7377dd059f37bb3e0f791b802d4001`.
 
 ### 📦 Install / update
 Download the DMG or ZIP below. Quit **VoiceInk ChatGPT**, then replace the app in Applications. Existing settings stay; the original VoiceInk remains separate.

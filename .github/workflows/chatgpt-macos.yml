@@ -59,6 +59,13 @@ jobs:
         run: swift test
       - name: Test mode settings migration and backup round trips
         run: python3 scripts/test-chatgpt-mode-settings.py
+      - name: Test API-key cache concurrency without credentials
+        run: bash scripts/test-api-key-cache.sh
+      - name: Typecheck API-key manager
+        run: >-
+          swiftc -typecheck -swift-version 5
+          VoiceInk/Infrastructure/Credentials/APIKeyManager.swift
+          VoiceInk/Infrastructure/Credentials/KeychainService.swift
       - name: Typecheck native ChatGPT client
         run: >-
           swiftc -typecheck -swift-version 5

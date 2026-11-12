@@ -1,12 +1,12 @@
 # VoiceInk ChatGPT | Agent handoff
 
-Verified: **2026-11-12, Europe/Berlin**. This is a standalone development and release handoff, not evidence that a new app build has been performed. Read current repository instructions and GitHub state before acting; dates, model catalogs and runner images can change.
+Verified: **2026-11-12, Europe/Berlin**. This is a standalone development and release handoff. See `PROJECT_STATUS.md` for current validation and publication evidence. Read current repository instructions and GitHub state before acting; dates, model catalogs and runner images can change.
 
 ## 1. Mission and scope
 
 Maintain a VoiceInk fork that supports **native ChatGPT sign-in for audio transcription and optional LLM text enhancement**, without requiring an API key or installed CLI for that provider. Preserve the original VoiceInk features and allow both applications to coexist.
 
-This delivery only prepares documentation. No upstream 2.27 merge, app build or release is authorized by the documentation task alone. When the user requests the next app update, use the update procedure below.
+The user authorized the upstream update and checked DMG/ZIP publication on 2026-11-12. Review branch `codex/upstream-2.27-build230` targets stable upstream 2.27 as ChatGPT Build 230. Publication is conditional on independent review, native CI and package verification; do not treat a prepared merge as a released binary.
 
 ### Entry points
 
@@ -147,6 +147,7 @@ On a suitable local Mac the baseline commands are:
 ```sh
 swift test
 python3 scripts/test-chatgpt-mode-settings.py
+bash scripts/test-api-key-cache.sh
 swiftc -typecheck -swift-version 5 \
   VoiceInk/Infrastructure/Providers/ChatGPT/ChatGPTProtocol.swift \
   VoiceInk/Infrastructure/Providers/ChatGPT/ChatGPTClient.swift \

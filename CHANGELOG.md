@@ -1,5 +1,13 @@
 # Changelog
 
+## VoiceInk 2.27 — ChatGPT Build 230 · 2026-11-12
+
+- 🔄 Integrated stable upstream 2.27: ElevenLabs Scribe V3, display wake prevention during dictation and performance improvements.
+- 🔒 Preserved native ChatGPT audio/text integration, separate app identity and existing settings.
+- 🛠️ Serialized API-key presence caching with key writes so a concurrent lookup cannot retain stale account availability. Transient Keychain failures remain uncached.
+
+Upstream: `Beingpax/VoiceInk` · `b5d1be9a7c7377dd059f37bb3e0f791b802d4001` · version 2.27, build 227.
+
 ## Documentation · 2026-11-12
 
 - 📝 Added a complete agent handoff, sub-agent workflow and next-upstream build/release checklist.

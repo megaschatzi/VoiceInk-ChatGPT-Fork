@@ -2,6 +2,10 @@
 
 Updated: 2026-11-12 (Europe/Berlin). Read with `AGENTS.md`; use Actions for live build status.
 
+## Update under validation
+
+Review branch `codex/upstream-2.27-build230` integrates stable VoiceInk 2.27 (`b5d1be9a7c7377dd059f37bb3e0f791b802d4001`, upstream build 227) as ChatGPT Build 230. The merge preserves app identity, ChatGPT account storage, settings and model/reasoning persistence. A fork fix serializes API-key cache reads with writes/deletes; transient Keychain errors remain uncached. Independent read-only review found no merge blocker. Locally passed: mode-settings migration/backup round trips, native ChatGPT client and API-key manager typechecks, and the mock-Keychain cache regression (also confirmed to fail against unmodified upstream). Local `swift test` cannot load XCTest from the installed Command Line Tools; native CI must run the full suite and app build. Native review-branch build, package validation and publication are still required. Build 229 below remains the published baseline until those checks complete.
+
 ## Current baseline
 
 - Public fork: [megaschatzi/VoiceInk-ChatGPT-Fork](https://github.com/megaschatzi/VoiceInk-ChatGPT-Fork), parent `Beingpax/VoiceInk`, default branch `main`.
