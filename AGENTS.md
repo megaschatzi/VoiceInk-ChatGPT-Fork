@@ -1,6 +1,6 @@
 # Project guidance
 
-Read `PROJECT_STATUS.md`, `CHATGPT-INTEGRATION.md` and `UPSTREAM.json` before making changes. Keep GitHub documentation concise and in English.
+Read `PROJECT_STATUS.md`, `AGENT_HANDOFF.md`, `CHATGPT-INTEGRATION.md` and `UPSTREAM.json` before making changes. Keep GitHub documentation concise and in English.
 
 ## Start here
 
@@ -28,6 +28,10 @@ For new agent-authored commits, use author and committer name `Spezi (Codex)` wi
 - Keep download assets and version-specific download links in GitHub Releases. The README should describe features and installation without a manually maintained download/version block.
 - Keep the three setup screenshots beside their corresponding features: ChatGPT connection/sign-in button, transcription-model selection, and text-model/reasoning selection. Use real app captures; explicitly label offline demo settings and never include personal data or real credentials. Refresh screenshots when those controls change.
 - Use full app screenshots with simple orange frames around the relevant controls. No zoomed details, side-by-side compositions or arrows. Add frames deterministically to genuine captures without generative image editing; preserve original dimensions, UI text and all pixels outside the frame outlines.
+
+## Sub-agent collaboration
+
+Use sub-agents for useful independent work where available. The main agent coordinates and verifies the final result. Assign non-overlapping file scopes, pass all repository instructions, and independently review important changes. Prefer an available Luna/Medium-class agent for simple checks and Terra/Medium-class for substantial code; use higher effort selectively for hard debugging. If those agents/models are unavailable, continue with available capabilities and report the limitation. Do not delegate routine work solely to create activity. See `AGENT_HANDOFF.md` for the full workflow.
 
 ## Maintain the handoff
 

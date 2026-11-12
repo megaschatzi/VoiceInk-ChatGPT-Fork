@@ -1,5 +1,9 @@
 # Changelog
 
+## Documentation · 2026-11-12
+
+- 📝 Added a complete agent handoff, sub-agent workflow and next-upstream build/release checklist.
+
 ## VoiceInk 2.26 — ChatGPT Build 229 · 2026-11-07
 
 - 🔄 Aligned with upstream VoiceInk 2.26; its streaming fixes were already included in Build 228.

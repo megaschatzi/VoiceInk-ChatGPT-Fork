@@ -1,6 +1,6 @@
 # Project status
 
-Updated: 2026-11-07 UTC. Read with `AGENTS.md`; use Actions for live build status.
+Updated: 2026-11-12 (Europe/Berlin). Read with `AGENTS.md`; use Actions for live build status.
 
 ## Current baseline
 
@@ -40,4 +40,10 @@ Keep private operations, credentials, business prompts, personal dictionaries an
 
 ## Upstream feature proposal
 
-The user submitted [Beingpax/VoiceInk#1063](https://github.com/Beingpax/VoiceInk/issues/1063): **Native ChatGPT sign-in for audio transcription and text enhancement (no API key or CLI)**. It links this fork, implementation details, the release and three setup screenshots. It is a feature suggestion, not a pull request, in line with upstream's current contribution policy. Verified open with no comments on 2026-11-07; check the issue directly for later maintainer feedback before planning an upstream contribution. No automatic issue monitoring is configured.
+The user submitted [Beingpax/VoiceInk#1063](https://github.com/Beingpax/VoiceInk/issues/1063): **Native ChatGPT sign-in for audio transcription and text enhancement (no API key or CLI)**. It links this fork, implementation details, the release and three setup screenshots. It is a feature suggestion, not a pull request, in line with upstream's current contribution policy. Verified open with no comments on 2026-11-12; check the issue directly for later maintainer feedback before planning an upstream contribution. No automatic issue monitoring is configured.
+
+## Next upstream candidate and complete handoff
+
+Upstream **2.27** was published on 2026-11-11; tag `v2.27` resolves to `b5d1be9a7c7377dd059f37bb3e0f791b802d4001` at the 2026-11-12 check. It adds ElevenLabs Scribe V3 support, display wake prevention during dictation and performance changes. It is **not integrated or validated in this fork**. If selected next and build 230 remains unused, the expected release is **VoiceInk 2.27 — ChatGPT Build 230**. In particular review KeychainService's `Bool` → `Bool?` existence check, API-key caching, app/engine observation and recorder sleep behavior against our separate identity/account lifecycle.
+
+`AGENT_HANDOFF.md` provides a complete fresh-agent runbook: scope, verified provenance, merge hotspots, sub-agent coordination, native tests, release triggers, public download verification, screenshots, privacy and upstream communication. This handoff delivery changes documentation only; no app merge, build or release was performed.

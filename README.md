@@ -59,6 +59,6 @@ Find downloads and version details in GitHub's **Releases** section. Requires ma
 
 ## 🛠️ Development
 
-[Agent guide](AGENTS.md) · [Build instructions](CHATGPT-BUILD.md) · [Integration details](CHATGPT-INTEGRATION.md) · [Project status](PROJECT_STATUS.md) · [Changelog](CHANGELOG.md) · [Upstream provenance](UPSTREAM.json)
+[Agent guide](AGENTS.md) · [Complete handoff](AGENT_HANDOFF.md) · [Build instructions](CHATGPT-BUILD.md) · [Integration details](CHATGPT-INTEGRATION.md) · [Project status](PROJECT_STATUS.md) · [Changelog](CHANGELOG.md) · [Upstream provenance](UPSTREAM.json)
 
 ChatGPT integration maintained by **Spezi (Codex)**. Original VoiceInk by its upstream authors. This fork is not an official OpenAI integration. Distributed under [GPL-3.0](LICENSE).

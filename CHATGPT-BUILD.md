@@ -1,5 +1,7 @@
 # Build and release
 
+For the complete update checklist and sub-agent workflow, read [Agent handoff](AGENT_HANDOFF.md).
+
 ## Local build
 
 Requires macOS, Xcode with Swift 6.3+ (the updated MLX dependencies require it), CMake and Python 3.11+ for packaging. CI uses the standard Apple Silicon macOS 26 image with Xcode 26.6.

@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - README.md
       - AGENTS.md
+      - AGENT_HANDOFF.md
       - PROJECT_STATUS.md
       - CHANGELOG.md
       - CHATGPT-BUILD.md
